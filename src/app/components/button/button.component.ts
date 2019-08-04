@@ -6,21 +6,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-
   @Input() btnClass: String;
   @Input() btnText: String;
   @Input() disabled: Boolean;
   @Input() removeCaret: Boolean;
   @Output() submit = new EventEmitter();
 
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   public onClick() {
     this.submit.emit();
   }
-
 }

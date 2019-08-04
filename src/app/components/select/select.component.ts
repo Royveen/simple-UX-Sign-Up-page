@@ -6,9 +6,7 @@ import { SelectOptions } from '../../interfaces/select';
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss']
 })
-
 export class SelectComponent implements OnInit {
-
   @Input() options: SelectOptions[];
   @Input() selectClass: String;
   @Input() selectId: String;
@@ -19,23 +17,15 @@ export class SelectComponent implements OnInit {
   public selectValue: String = '';
   public showError: Boolean = false;
   public blank: Boolean = true;
-  
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor() {}
+
+  ngOnInit() {}
 
   public changeValue(value: String): void {
-
-    if (value === '') {
-      this.blank = true;
-    }else {
-      this.blank = false;
-    }
-
+    this.blank = value.length === 0 ? true : false;
     this.showError = false;
     this.selectValue = value;
     this.sendValue.emit(this.selectValue);
   }
-
 }

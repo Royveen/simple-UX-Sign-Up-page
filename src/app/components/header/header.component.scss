@@ -1,39 +1,42 @@
 @import '../../../variables.scss';
 
 :host {
-    .heading-component {
-        position: relative;
-        &.main {
-            
-            span {
-                font:  bold calc(35px + (65 - 35) * ((100vw - 300px) / (1600 - 300))) Montserrat;
+  .heading-component {
+    position: relative;
 
-                &:before {
-                    content: "";
-                    position: absolute;
-                    left: auto;
-                    top: 0px;
-                    height: 1px;
-                    width: 25%;
-                    border-bottom: 10px solid $primary-red;
-                    @media screen and (max-width: 700px) {
-                        margin-top: 2.6em;
-                    }
-                    @media screen and (min-width: 700px) {
-                        margin-top: 1.6em;
-                    }
-                }
-                
-            }
+    &.main {
+
+      span {
+        font: bold calc(35px + (65 - 35) * ((100vw - 300px) / (1600 - 300))) Montserrat;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: auto;
+          top: 0px;
+          height: 1px;
+          width: 25%;
+          border-bottom: 10px solid $primary-red;
+
+          @media screen and (max-width: 700px) {
+            margin-top: 2.6em;
+          }
+
+          @media screen and (min-width: 700px) {
+            margin-top: 1.6em;
+          }
         }
 
-        &.sub {
-            span {
-                font:  bold calc(20px + (35 - 20) * ((100vw - 300px) / (1600 - 300))) Montserrat;
-            }
-        }
-
-       
-        
+      }
     }
+
+    &.sub {
+      span {
+        font: bold calc(20px + (35 - 20) * ((100vw - 300px) / (1600 - 300))) Montserrat;
+      }
+    }
+
+
+
+  }
 }

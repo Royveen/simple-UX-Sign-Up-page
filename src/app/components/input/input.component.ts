@@ -7,7 +7,6 @@ import { EventManager } from '@angular/platform-browser';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
-
   @Input() inputType: String;
   @Input() inputClass: String;
   @Input() inputId: String;
@@ -21,10 +20,9 @@ export class InputComponent implements OnInit {
 
   @Output() sendValue = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   public changeValue(event): void {
     this.showError = false;

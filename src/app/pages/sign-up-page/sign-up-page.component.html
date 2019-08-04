@@ -7,24 +7,25 @@
       <p>{{content}}</p>
     </div>
     <div class="sign-up-form new-comp">
-      <app-input #email inputType="email" inputId="sign-up-email" inputClass="sign-up-email"
-      inputAria="email" inputPlaceholder="Your Email Address *" [value]="signUpForm.email" (sendValue) = "setEmail($event)" errorMessage="Please enter a valid email address">
+      <app-input #email inputType="email" inputId="sign-up-email" inputClass="sign-up-email" inputAria="email"
+        inputPlaceholder="Your Email Address *" [value]="signUpForm.email" (sendValue)="setEmail($event)"
+        errorMessage="Please enter a valid email address">
       </app-input>
-      <app-select #interests selectClass="sign-up-interest" selectId="sign-up-interest" [options]=selectOptions 
-      errorMessage="Please select a valid interest" (sendValue) = "setInterest($event)">
+      <app-select #interests selectClass="sign-up-interest" selectId="sign-up-interest" [options]=selectOptions
+        errorMessage="Please select a valid interest" (sendValue)="setInterest($event)">
       </app-select>
     </div>
     <div class="button-box new-comp">
       <app-button [btnText]="submitButtonText" [removeCaret]=removeCaret (submit)="onSubmit()"></app-button>
     </div>
-</ng-template>
+  </ng-template>
 
-<ng-template [ngIf]="submitSuccess">
+  <ng-template [ngIf]="submitSuccess">
     <div class="sign-up-sub-heading new-comp">
-        <app-header [headingContent]="thankSubHeading" [subHeading]=true></app-header>
+      <app-header [headingContent]="thankSubHeading" [subHeading]=true></app-header>
     </div>
     <div class="sign-up-content ">
       <p>{{thankContent}}</p>
     </div>
-</ng-template>
+  </ng-template>
 </div>

@@ -23,25 +23,24 @@ export class SignUpPageComponent implements OnInit {
 
   public signUpForm = {
     email: '',
-    interest: '',
+    interest: ''
   };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-
-    this.content = 'Prepare for your career with a Project Management, Web-Development, '
-    + 'Graphic design, or Digital Marketing Internship at Northern';
+    this.content =
+      'Prepare for your career with a Project Management, Web-Development, ' +
+      'Graphic design, or Digital Marketing Internship at Northern';
 
     this.submitButtonText = 'Sign Up Now';
 
     this.selectOptions = [
       {
         value: 'Development',
-        label: 'Development',
+        label: 'Development'
       }
     ];
-
   }
 
   public setEmail(value: string): void {
@@ -55,7 +54,7 @@ export class SignUpPageComponent implements OnInit {
   public onSubmit(): void {
     if (this.signUpForm.email.length === 0) {
       this.emailComponent.showError = true;
-        return;
+      return;
     }
 
     console.log(this.signUpForm);
@@ -64,8 +63,9 @@ export class SignUpPageComponent implements OnInit {
 
     setTimeout(() => {
       this.thankSubHeading = 'Thanks for your interest!';
-      this.thankContent = 'We will review your application and contact you for additional information should your background'
-      + ' and experience meet the requirements of one of our openings.';
+      this.thankContent =
+        'We will review your application and contact you for additional information should your background' +
+        ' and experience meet the requirements of one of our openings.';
       this.submitSuccess = true;
     }, 2000);
   }
