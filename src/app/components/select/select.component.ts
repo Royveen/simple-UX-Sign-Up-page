@@ -18,19 +18,24 @@ export class SelectComponent implements OnInit {
 
   public selectValue: String = '';
   public showError: Boolean = false;
-
+  public blank: Boolean = true;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeValue(value) {
+  public changeValue(value: String): void {
+
+    if (value === '') {
+      this.blank = true;
+    }else {
+      this.blank = false;
+    }
+
     this.showError = false;
     this.selectValue = value;
-    if (value.length === 0) {
-      this.showError = true;
-    }
-    this.sendValue.emit(value);
+    this.sendValue.emit(this.selectValue);
   }
 
 }

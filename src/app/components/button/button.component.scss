@@ -1,10 +1,11 @@
-:host {
+@import '../../../variables.scss';
 
+:host {
     width: 100%;
     button {
-        font: Bold  20px Merriweather;
-        background-color: #D02035;
-        color: white;
+        font: Bold  calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300))) Merriweather;
+        background-color: $primary-red;
+        color: $primary-font-color;
         height: 60px;
         width: 100%;
         padding: 10px;

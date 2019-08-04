@@ -30,7 +30,6 @@ export class InputComponent implements OnInit {
     this.showError = false;
     if (event.target.value.length > 0) {
       if (!event.target.validity.valid) {
-        this.showError = true;
         this.sendValue.emit('');
       } else {
         this.sendValue.emit(event.target.value);

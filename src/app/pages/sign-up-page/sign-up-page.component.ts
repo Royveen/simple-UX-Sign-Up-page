@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SelectOptions } from '../../interfaces/select';
+import { InputComponent } from '../../components/input/input.component';
+import { SelectComponent } from '../../components/select/select.component';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -7,16 +9,17 @@ import { SelectOptions } from '../../interfaces/select';
   styleUrls: ['./sign-up-page.component.scss']
 })
 export class SignUpPageComponent implements OnInit {
+  @ViewChild('email') emailComponent: InputComponent;
+  @ViewChild('interests') interestComponent: SelectComponent;
 
   public content: String;
-  public selectOptions: SelectOptions[] = [
-    {
-      value: 'Development',
-      label: 'Development',
-    }
-  ];
-
-  public buttonDisable: Boolean = false;
+  public thankContent: String;
+  public selectOptions: SelectOptions[];
+  public removeCaret: Boolean = false;
+  public submitSuccess: Boolean = false;
+  public submitButtonText: String;
+  public thankSubHeading: String;
+  public mainHeading: String = 'INTERNSHIP SIGNUP FORM';
 
   public signUpForm = {
     email: '',
@@ -30,16 +33,40 @@ export class SignUpPageComponent implements OnInit {
     this.content = 'Prepare for your career with a Project Management, Web-Development, '
     + 'Graphic design, or Digital Marketing Internship at Northern';
 
+    this.submitButtonText = 'Sign Up Now';
+
+    this.selectOptions = [
+      {
+        value: 'Development',
+        label: 'Development',
+      }
+    ];
+
   }
 
   public setEmail(value: string): void {
-    console.log(!(this.signUpForm.email.length > 0) && !(this.signUpForm.interest.length > 0));
     this.signUpForm.email = value;
   }
 
   public setInterest(value: string): void {
-    console.log(!(this.signUpForm.email.length > 0) && !(this.signUpForm.interest.length > 0));
     this.signUpForm.interest = value;
   }
 
+  public onSubmit(): void {
+    if (this.signUpForm.email.length === 0) {
+      this.emailComponent.showError = true;
+        return;
+    }
+
+    console.log(this.signUpForm);
+    this.submitButtonText = 'Submitting...';
+    this.removeCaret = true;
+
+    setTimeout(() => {
+      this.thankSubHeading = 'Thanks for your interest!';
+      this.thankContent = 'We will review your application and contact you for additional information should your background'
+      + ' and experience meet the requirements of one of our openings.';
+      this.submitSuccess = true;
+    }, 2000);
+  }
 }

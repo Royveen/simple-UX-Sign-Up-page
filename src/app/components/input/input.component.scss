@@ -1,7 +1,9 @@
+@import '../../../variables.scss';
+
 :host {
     width: 100%;
     input{
-        font: italic  16px Merriweather;
+        font: italic  calc(11px + (16 - 11) * ((100vw - 300px) / (1600 - 300))) Merriweather;
         height: 60px;
         padding: 20px;
         border: 0;
@@ -9,7 +11,7 @@
         outline: 0;
 
         &.alert-error-element {
-            border: 2px solid #D02035;
+            border: 2px solid $primary-red;
         }
     }
     
