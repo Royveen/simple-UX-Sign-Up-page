@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+html,
+body
+{
+    height: 100%;
+    widows: 100%;
+    background-color: #282828;
+    color: white;
+}
+
+small{
+    &.error-text {
+        font: Regular 12px Merriweather;
+        margin-bottom: 5px;
+    }
+}
+

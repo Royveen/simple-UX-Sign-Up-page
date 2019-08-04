@@ -1,0 +1,9 @@
+<div class="input-component">
+  <div class="form-group">
+      <small id="{{inputId}}-error" class="form-text error-text text-right" [style.visibility]="showError ? 'visible' : 'hidden'">
+        {{errorMessage}}</small>
+      <input [type]="inputType" class=" form-control {{inputClass}}" [ngClass]="{'alert-error-element':showError}" [id]="inputId" 
+      [attr.aria-describedby]="inputAria" (change)="changeValue($event)" [attr.placeholder]="inputPlaceholder" [attr.value]="value" 
+      [attr.readonly]="readOnly">
+  </div>
+</div>

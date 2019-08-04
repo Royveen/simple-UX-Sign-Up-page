@@ -1,0 +1,10 @@
+<div class="select-component">
+    <small id="{{inputId}}-error" class="form-text error-text text-right" [style.visibility]="showError ? 'visible' : 'hidden'">
+        {{errorMessage}}</small>
+    <select [class]="selectClass" [id]="selectId" [ngClass]="{'alert-error-element':showError}" (change)="changeValue($event.target.value)">
+      <option value="" selected>Your Interests</option>
+      <option *ngFor="let option of options" [value]="option.value" >
+        {{option.label}}
+      </option>
+    </select> 
+</div>

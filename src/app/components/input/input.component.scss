@@ -1,0 +1,17 @@
+:host {
+    width: 100%;
+    input{
+        font: italic  16px Merriweather;
+        height: 60px;
+        padding: 20px;
+        border: 0;
+        border-radius: 0;
+        outline: 0;
+
+        &.alert-error-element {
+            border: 2px solid #D02035;
+        }
+    }
+    
+    
+}

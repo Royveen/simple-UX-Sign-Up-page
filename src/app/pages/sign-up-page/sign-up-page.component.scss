@@ -1,0 +1,18 @@
+:host {
+    .sign-up {
+        height: 100%;
+
+        &-form {
+            display: flex;
+            ::ng-deep app-select {
+                margin-left: 10px;
+            }
+        }
+    }
+    .new-comp {
+        margin-bottom: 20px
+    }
+
+    
+
+}
