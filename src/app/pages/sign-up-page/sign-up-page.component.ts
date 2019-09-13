@@ -31,7 +31,7 @@ export class SignUpPageComponent implements OnInit {
   ngOnInit() {
     this.content =
       'Prepare for your career with a Project Management, Web-Development, ' +
-      'Graphic design, or Digital Marketing Internship at Northern';
+      'Graphic design, or Digital Marketing Internship';
 
     this.submitButtonText = 'Sign Up Now';
 
